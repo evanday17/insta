@@ -3,7 +3,11 @@ from selenium.webdriver.common.keys import Keys
 import time
 import random
 import sys
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
+from selenium.webdriver.common.by import By
 
+# need to randomize sleep times to look like a human
 
 class instagram():
     
@@ -17,13 +21,12 @@ class instagram():
         #chrome_options.add_argument("--headless")
 
     def login(self):
-        #  open up the page
-        
-    
-        #  find the login field and then enter login info
+        #  open up the page        
         driver = self.driver
         driver.get('https://www.instagram.com/accounts/login/')
+        
         time.sleep(3)
+        #  find the login field and then enter login info
         user_name = self.driver.find_element_by_name('username')
         user_name.send_keys(self.username)
     
@@ -33,15 +36,12 @@ class instagram():
     
         #find submit button and click
         driver.find_element_by_xpath('//button[@type ="submit"]').click()
-      
+     
+        #wait 10 seconds and click on the not now on the pop up
+        WebDriverWait(driver, 10).until(EC.element_to_be_clickable((By.CSS_SELECTOR, ".aOOlW.HoLwm"))).click()
 
     def followers(self):
-        #driver.find_element_by_xpath('//button[contains(text(), "Not Now")]').click()
-        #follower = self.driver.find_element_by_type('Search')
-        #follower.send_keys(self.follwer)
-        #pass
-        #driver.find_element_by_xpath('//class[contains(text(), "Not Now")]').click()
-        driver.find_element_by_xpath('//button[@class ="mt3GC"]').click()
+        pass
 
 
 def main():
