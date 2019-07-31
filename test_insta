@@ -1,0 +1,43 @@
+from selenium import webdriver
+from selenium.webdriver.common.keys import Keys
+import time
+import random
+import sys
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
+from selenium.webdriver.common.by import By
+
+
+
+driver = webdriver.Chrome( executable_path = r'C:\Users\EDay\Desktop\chromedriver.exe')
+username = 'eday168'
+password = '88888888'
+follower = 'ct3_dmv'
+
+driver.get('https://www.instagram.com/accounts/login/')
+x = driver.find_element_by_name('username')
+x.send_keys(username)
+    
+        #  find the pw field and then enter pw
+pass_word = driver.find_element_by_name('password')
+pass_word.send_keys(password)
+    
+        #find submit button and click
+driver.find_element_by_xpath('//button[@type ="submit"]').click()
+WebDriverWait(driver, 10).until(EC.element_to_be_clickable((By.CSS_SELECTOR, ".aOOlW.HoLwm"))).click()
+time.sleep(5)
+
+#click into the search box
+driver.find_element_by_css_selector(".LWmhU._0aCwM").click()
+
+# type in the follower we want to target
+f = driver.find_element_by_xpath("//input[@placeholder='Search']")
+f.send_keys(follower)
+time.sleep(3)
+
+
+
+
+# click on followers name after it drops down in search bar
+#this is the part that is hard coded...need to pass the follower function with / before and / after it.
+driver.find_element_by_css_selector("a[href='/ct3_dmv/']").click()
