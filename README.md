@@ -30,7 +30,7 @@ TBD
 
 ## Authors
 @evanday17
-@ct3
+@ct3-ln
 
 ## Contributing
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
