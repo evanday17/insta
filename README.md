@@ -11,17 +11,17 @@ On average, users spend 53 minutes daily on the platform (Statista, 2018)<br/>
 
 ## How it works
 
-1.)Gather username, password, and follower/hashtag to target<br/>
-  1.)if no follower/hashtag is provided insta.py will target at random*<br/>
-2.)Utilize Selenium to open instagram.com and log into account<br/>
-3.)Start following followers of the target account or hashtag<br/>
-4.)Each account followed is moved into a list<br/>
-5.)Once completed...print the number of accounts followed<br/>
-6.)After 24 hours pull list of own followers and compare two lists to see who followed back and who didn't<br/>
-7.)Remove everyone followed or only remove people who didn't follow back?<br/>
-8.)Provide the user with number of followers gained in the 24 hour period<br/>
-  8.)*maybe we don't need to wait 24 hours?*
-9.)Have random sleep times to prevent being deteced as a bot<br/>
+1.Gather username, password, and follower/hashtag to target<br/>
+  1.if no follower/hashtag is provided insta.py will target at random*<br/>
+2.Utilize Selenium to open instagram.com and log into account<br/>
+3.Start following followers of the target account or hashtag<br/>
+4.Each account followed is moved into a list<br/>
+5.Once completed...print the number of accounts followed<br/>
+6.After 24 hours pull list of own followers and compare two lists to see who followed back and who didn't<br/>
+7.Remove everyone followed or only remove people who didn't follow back?<br/>
+8.Provide the user with number of followers gained in the 24 hour period<br/>
+  8.*maybe we don't need to wait 24 hours?*
+9.Have random sleep times to prevent being deteced as a bot<br/>
 
 
 
