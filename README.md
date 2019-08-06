@@ -2,11 +2,11 @@
 
 Insta.py is designed to increase brand reputation by growing the user(s) following on instagram.  The larger the following, the more people you can instantly reach/influence.  Insta.py will follow users specific to your brand/industry ensuring you gain followers interested in your content.  Insta.py has the ability to follow random users as well, if you are unsure who to target.&nbsp;
 
-Instagram has 1 billion montlyh active users and more than 500 million of them use the platform every day (Statista, 2018)
+Instagram has 1 billion montlyh active users and more than 500 million of them use the platform every day (Statista, 2018)&nbsp;
 On average, users spend 53 minutes daily on the platform (Statista, 2018)
 71% of US businessess use Instagram (Statista, 2018)
 83% of users say they discover new products and services on Instagram (Facebook, 2019)
-50% of users follow at least one business (Mention, 2018)
+50% of users follow at least one business (Mention, 2018)&nbsp;
 80% of the users say Instagram helps them decide whether to buy a product or not
 
 ## How it works
