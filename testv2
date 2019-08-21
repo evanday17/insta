@@ -1,0 +1,68 @@
+from selenium import webdriver
+from selenium.webdriver.common.keys import Keys
+import time
+import random
+import sys
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
+from selenium.webdriver.common.by import By
+import requests
+from bs4 import BeautifulSoup
+import instaloader
+
+
+# ***need to add in random sleep times after diff actions tolook human
+# *** use this: time.sleep(random.randrange(30))
+
+
+username = 'eday168'
+password = '88888888'
+follower = 'werjustgrubbin'
+followers = []
+
+#need this to access instaloader....i think = )
+#this will login using instaloader and then grab all followers and add to a list
+L = instaloader.Instaloader()
+L.login(username,password)
+profile = instaloader.Profile.from_username(L.context, follower)
+for follower in profile.get_followers():
+    followers.append(follower.username)
+
+print('****************************************************')
+print(len(followers), ' profiles have been added to your list of people to follow')
+print('****************************************************')
+#  test to see if it workins: print(followers[0])
+
+
+
+'''now that we have our list of followers we need to login into insta
+ and follow our list.  '''
+ 
+# login and click that annoying pop up window
+driver = webdriver.Chrome( executable_path = r'C:\Users\EDay\Desktop\chromedriver.exe')
+driver.get('https://www.instagram.com/accounts/login/')
+
+driver.find_element_by_name('username').send_keys(username)
+driver.find_element_by_name('password').send_keys(password)
+
+driver.find_element_by_xpath('//button[@type ="submit"]').click()
+WebDriverWait(driver, 10).until(EC.element_to_be_clickable((By.CSS_SELECTOR, ".aOOlW.HoLwm"))).click()
+
+# let's loop through the followers, and follow each person
+for f in followers:
+    # use selenium to open follwer page and click follow button
+
+
+
+
+
+
+'''#follow function 
+#goes to profile and clicks on followers
+follower_list = []
+driver.find_element_by_xpath("//input[@placeholder='Search']").send_keys(follower)
+time.sleep(5)
+driver.find_element_by_xpath("//input[@placeholder='Search']").send_keys(Keys.ENTER,Keys.ENTER)
+time.sleep(3)
+driver.find_element_by_css_selector('ul li a').click()
+'''
